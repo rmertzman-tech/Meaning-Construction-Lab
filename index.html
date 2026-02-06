@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meaning Construction Lab - Build Your Thermodynamic Flourishing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        *:focus {
+            outline: 3px solid #2563eb;
+            outline-offset: 2px;
+        }
+        
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            z-index: 100;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        @media print {
+            .no-print { display: none; }
+        }
+        
+        button, a, input, select {
+            min-height: 44px;
+        }
+        
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+        }
+        
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .tooltip-content {
+            display: none;
+            position: absolute;
+            background: #1f2937;
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            width: 300px;
+            z-index: 1000;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-bottom: 8px;
+        }
+        
+        .tooltip:hover .tooltip-content,
+        .tooltip:focus .tooltip-content {
+            display: block;
+        }
+        
+        .gradient-flourish {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .component-mdi { border-color: #8b5cf6; background-color: #f5f3ff; }
+        .component-rcs { border-color: #3b82f6; background-color: #eff6ff; }
+        .component-af { border-color: #10b981; background-color: #f0fdf4; }
+        .component-lqi { border-color: #f59e0b; background-color: #fffbeb; }
+        .component-cpr { border-color: #ef4444; background-color: #fef2f2; }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div id="sr-announcements" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+
+<!-- Accessibility Controls -->
+<div class="no-print bg-gray-900 text-white p-3" role="banner">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
+        <div class="flex items-center gap-4">
+            <button onclick="toggleHighContrast()" class="px-4 py-2 bg-white text-gray-900 rounded-lg hover:bg-gray-100 font-semibold">
+                <span aria-hidden="true">🔲</span> High Contrast
+            </button>
+            <button onclick="adjustTextSize('increase')" class="px-4 py-2 bg-white text-gray-900 rounded-lg hover:bg-gray-100 font-semibold">
+                <span aria-hidden="true">A+</span> Larger
+            </button>
+            <button onclick="adjustTextSize('decrease')" class="px-4 py-2 bg-white text-gray-900 rounded-lg hover:bg-gray-100 font-semibold">
+                <span aria-hidden="true">A-</span> Smaller
+            </button>
+        </div>
+        <div class="text-sm">
+            <span class="font-semibold">WCAG 2.1 AAA Compliant</span>
+        </div>
+    </div>
+</div>
+
+<div id="app" class="min-h-screen">
+    <!-- LANDING PAGE -->
+    <main id="main-content" tabindex="-1">
+        <div id="landing" class="max-w-6xl mx-auto px-4 py-12">
+            <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
+                
+                <header class="gradient-flourish text-white p-8 text-center">
+                    <h1 class="text-5xl font-bold mb-2">The Meaning Construction Lab</h1>
+                    <p class="text-2xl font-light">Building Thermodynamic Flourishing</p>
+                    <p class="text-xl mt-2 opacity-90">Ethics Beyond Boundaries</p>
+                    <p class="text-lg mt-1 opacity-75">Saint Petersburg College - Prof. Bob Kendrick</p>
+                </header>
+
+                <div class="p-8">
+                    <!-- Overview -->
+                    <section aria-labelledby="overview-heading" class="mb-8">
+                        <div class="bg-gradient-to-r from-purple-50 to-blue-50 border-2 border-purple-300 rounded-xl p-6">
+                            <h2 id="overview-heading" class="text-3xl font-bold text-gray-900 mb-4">
+                                What Is This Assessment?
+                            </h2>
+                            <p class="text-lg text-gray-700 mb-4">
+                                This assessment measures your capacity for building a meaningful life through five dimensions 
+                                of <strong>thermodynamic flourishing</strong>:
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                <div class="bg-white rounded-lg p-4 border-l-4 border-purple-500">
+                                    <h3 class="font-bold text-purple-900 mb-2">🎯 Meaning Depth</h3>
+                                    <p class="text-sm text-gray-700">Are your goals worthy of your potential?</p>
+                                </div>
+                                <div class="bg-white rounded-lg p-4 border-l-4 border-blue-500">
+                                    <h3 class="font-bold text-blue-900 mb-2">🧠 Rational Capacity</h3>
+                                    <p class="text-sm text-gray-700">Can you sustain high-quality thinking?</p>
+                                </div>
+                                <div class="bg-white rounded-lg p-4 border-l-4 border-green-500">
+                                    <h3 class="font-bold text-green-900 mb-2">🔄 Annealing Fluency</h3>
+                                    <p class="text-sm text-gray-700">Can you balance exploration and consolidation?</p>
+                                </div>
+                                <div class="bg-white rounded-lg p-4 border-l-4 border-orange-500">
+                                    <h3 class="font-bold text-orange-900 mb-2">✨ Life Quality</h3>
+                                    <p class="text-sm text-gray-700">Is your life actually good?</p>
+                                </div>
+                                <div class="bg-white rounded-lg p-4 border-l-4 border-red-500 md:col-span-2">
+                                    <h3 class="font-bold text-red-900 mb-2">🏗️ CIB Production</h3>
+                                    <p class="text-sm text-gray-700">Are you building something that lasts?</p>
+                                </div>
+                            </div>
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                                <p class="text-sm text-blue-900">
+                                    <strong>Time:</strong> 30-40 minutes for full assessment, or 6-8 minutes per module<br>
+                                    <strong>Questions:</strong> 70 questions across 5 modules<br>
+                                    <strong>Result:</strong> Personalized development pathways and practice recommendations
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Module Selection -->
+                    <section aria-labelledby="module-selection" class="mb-8">
+                        <h2 id="module-selection" class="text-2xl font-bold text-gray-900 mb-4">
+                            Choose Your Path:
+                        </h2>
+                        <div class="grid md:grid-cols-2 gap-4 mb-6">
+                            <button onclick="startFullAssessment()" class="p-6 bg-gradient-to-br from-purple-500 to-blue-500 text-white rounded-xl hover:from-purple-600 hover:to-blue-600 text-left">
+                                <div class="text-2xl font-bold mb-2">Complete Assessment</div>
+                                <div class="text-sm opacity-90">All 70 questions, full results (30-40 min)</div>
+                            </button>
+                            <button onclick="showModuleSelection()" class="p-6 border-2 border-purple-300 bg-purple-50 text-gray-900 rounded-xl hover:bg-purple-100 text-left">
+                                <div class="text-2xl font-bold mb-2">Individual Modules</div>
+                                <div class="text-sm text-gray-700">Take one module at a time (6-8 min each)</div>
+                            </button>
+                        </div>
+
+                        <div id="individual-modules" class="hidden space-y-3">
+                            <div class="bg-white border-2 border-purple-200 rounded-xl p-4">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <h3 class="font-bold text-purple-900">Module 1: Meaning Depth Index</h3>
+                                        <p class="text-sm text-gray-600">15 questions - Are your goals worthy of your potential?</p>
+                                    </div>
+                                    <button onclick="startModule('MDI')" class="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 font-semibold">
+                                        Start
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="bg-white border-2 border-blue-200 rounded-xl p-4">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <h3 class="font-bold text-blue-900">Module 2: Rational Capacity Score</h3>
+                                        <p class="text-sm text-gray-600">15 questions - Can you sustain high-quality thinking?</p>
+                                    </div>
+                                    <button onclick="startModule('RCS')" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold">
+                                        Start
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="bg-white border-2 border-green-200 rounded-xl p-4">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <h3 class="font-bold text-green-900">Module 3: Annealing Fluency</h3>
+                                        <p class="text-sm text-gray-600">15 questions - Can you balance exploration and stability?</p>
+                                    </div>
+                                    <button onclick="startModule('AF')" class="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 font-semibold">
+                                        Start
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="bg-white border-2 border-orange-200 rounded-xl p-4">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <h3 class="font-bold text-orange-900">Module 4: Life Quality Integration</h3>
+                                        <p class="text-sm text-gray-600">15 questions - Is your life actually good?</p>
+                                    </div>
+                                    <button onclick="startModule('LQI')" class="px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 font-semibold">
+                                        Start
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="bg-white border-2 border-red-200 rounded-xl p-4">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <h3 class="font-bold text-red-900">Module 5: CIB Production Rate</h3>
+                                        <p class="text-sm text-gray-600">10 questions - Are you building something that lasts?</p>
+                                    </div>
+                                    <button onclick="startModule('CPR')" class="px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 font-semibold">
+                                        Start
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Consent -->
+                    <section aria-labelledby="consent-heading">
+                        <fieldset class="bg-gray-50 rounded-lg p-6 mb-6 border-2 border-gray-300">
+                            <legend id="consent-heading" class="text-lg font-bold text-gray-900 mb-3 px-2">
+                                Privacy & Data Use:
+                            </legend>
+                            <div class="space-y-4 text-sm text-gray-700">
+                                <div class="flex items-start gap-3 p-3 hover:bg-gray-100 rounded-lg">
+                                    <input type="checkbox" id="consent-educational" class="mt-1 w-5 h-5" aria-required="true">
+                                    <label for="consent-educational" class="flex-1 cursor-pointer">
+                                        I understand this is for <strong>educational and developmental purposes</strong>, not clinical diagnosis.
+                                    </label>
+                                </div>
+                                <div class="flex items-start gap-3 p-3 hover:bg-gray-100 rounded-lg">
+                                    <input type="checkbox" id="consent-data" class="mt-1 w-5 h-5" aria-required="true">
+                                    <label for="consent-data" class="flex-1 cursor-pointer">
+                                        I consent to my <strong>anonymized</strong> results being used for class discussion and research.
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </section>
+
+                    <!-- Student Info -->
+                    <section aria-labelledby="student-info" class="mb-6">
+                        <fieldset>
+                            <legend id="student-info" class="text-lg font-bold text-gray-900 mb-3">Student Information (Optional):</legend>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="student-name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                                    <input type="text" id="student-name" class="w-full px-4 py-2 border-2 border-gray-300 rounded-lg">
+                                </div>
+                                <div>
+                                    <label for="student-age" class="block text-sm font-medium text-gray-700 mb-1">Age</label>
+                                    <input type="number" id="student-age" min="16" max="99" class="w-full px-4 py-2 border-2 border-gray-300 rounded-lg">
+                                </div>
+                            </div>
+                        </fieldset>
+                    </section>
+
+                    <!-- Note about consent -->
+                    <p class="text-sm text-gray-600 text-center mb-4">
+                        <span id="consent-status" role="status" aria-live="polite" class="font-semibold">
+                            Both consent boxes must be checked to begin.
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ASSESSMENT PAGE -->
+    <div id="assessment" class="hidden max-w-5xl mx-auto px-4 py-8">
+        <!-- Progress -->
+        <section aria-labelledby="progress-heading" class="mb-8">
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <h2 id="progress-heading" class="sr-only">Assessment Progress</h2>
+                <div class="mb-4">
+                    <div class="text-center mb-2">
+                        <span class="text-2xl font-bold text-purple-600" id="current-module-name">Module Name</span>
+                    </div>
+                    <div class="flex justify-between text-sm text-gray-700 mb-2">
+                        <span>Question <strong id="current-q">1</strong> of <strong id="total-q">15</strong></span>
+                        <span><strong id="progress-pct">0</strong>% Complete</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-3" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                        <div id="progress-bar" class="gradient-flourish h-3 rounded-full transition-all" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="text-sm text-gray-600 text-center">
+                    <span id="module-description">Module description</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Question Card -->
+        <article class="bg-white rounded-2xl shadow-2xl p-8 mb-6">
+            <div class="mb-6">
+                <div class="flex items-center gap-3 mb-3">
+                    <span id="component-badge" class="px-4 py-2 rounded-full text-sm font-bold">Component</span>
+                    <button class="tooltip text-gray-500 hover:text-gray-700" aria-label="Show explanation">
+                        <span aria-hidden="true">ℹ️</span>
+                        <div class="tooltip-content" id="tooltip-content">
+                            Explanation loading...
+                        </div>
+                    </button>
+                </div>
+                <p id="subscale-name" class="text-sm text-gray-600 font-semibold">Subscale Name</p>
+            </div>
+
+            <h2 id="question-text" class="text-2xl font-bold text-gray-900 mb-8">Question text loading...</h2>
+
+            <!-- Likert Scale -->
+            <fieldset>
+                <legend class="sr-only">Rate your agreement from 1 to 7</legend>
+                <div class="space-y-4">
+                    <div class="flex justify-between text-xs text-gray-600 mb-3 px-2">
+                        <span class="text-left w-20">Strongly Disagree</span>
+                        <span class="text-center">Neutral</span>
+                        <span class="text-right w-20">Strongly Agree</span>
+                    </div>
+                    
+                    <div class="grid grid-cols-7 gap-2" role="radiogroup">
+                        <button onclick="answer(1)" role="radio" aria-label="1 - Strongly Disagree" class="likert-btn py-8 border-2 border-gray-300 rounded-lg hover:border-purple-500 hover:bg-purple-50 transition-all font-bold text-2xl">1</button>
+                        <button onclick="answer(2)" role="radio" aria-label="2" class="likert-btn py-8 border-2 border-gray-300 rounded-lg hover:border-purple-500 hover:bg-purple-50 transition-all font-bold text-2xl">2</button>
+                        <button onclick="answer(3)" role="radio" aria-label="3" class="likert-btn py-8 border-2 border-gray-300 rounded-lg hover:border-purple-500 hover:bg-purple-50 transition-all font-bold text-2xl">3</button>
+                        <button onclick="answer(4)" role="radio" aria-label="4 - Neutral" class="likert-btn py-8 border-2 border-gray-300 rounded-lg hover:border-purple-500 hover:bg-purple-50 transition-all font-bold text-2xl">4</button>
+                        <button onclick="answer(5)" role="radio" aria-label="5" class="likert-btn py-8 border-2 border-gray-300 rounded-lg hover:border-purple-500 hover:bg-purple-50 transition-all font-bold text-2xl">5</button>
+                        <button onclick="answer(6)" role="radio" aria-label="6" class="likert-btn py-8 border-2 border-gray-300 rounded-lg hover:border-purple-500 hover:bg-purple-50 transition-all font-bold text-2xl">6</button>
+                        <button onclick="answer(7)" role="radio" aria-label="7 - Strongly Agree" class="likert-btn py-8 border-2 border-gray-300 rounded-lg hover:border-purple-500 hover:bg-purple-50 transition-all font-bold text-2xl">7</button>
+                    </div>
+                </div>
+            </fieldset>
+        </article>
+
+        <!-- Navigation -->
+        <nav class="flex justify-between items-center">
+            <button onclick="previousQuestion()" id="back-btn" class="px-6 py-3 border-2 border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-30 font-semibold" disabled>
+                ← Previous
+            </button>
+            <button onclick="saveAndExit()" class="px-6 py-3 border-2 border-purple-300 text-purple-700 rounded-lg hover:bg-purple-50 font-semibold">
+                Save & Exit
+            </button>
+        </nav>
+    </div>
+
+    <!-- RESULTS PAGE -->
+    <div id="results" class="hidden"></div>
+</div>
+
+<script>
+// ==========================================
+// QUESTION DATABASE
+// ==========================================
+
+const questions = [
+    // MODULE 1: MEANING DEPTH INDEX (MDI) - 15 questions
+    { id: 1, module: 'MDI', component: 'MDI-Complexity', subscale: 'Complexity Challenge', text: 'My biggest goals would require me to develop entirely new capabilities I don\'t currently have.', reverse: false, tooltip: 'Meaningful goals should demand transformation, not just "more of the same." Example HIGH: "I want to become a nurse but have never studied biology." Example LOW: "I want to get promoted doing what I already do."' },
+    { id: 2, module: 'MDI', component: 'MDI-Complexity', subscale: 'Complexity Challenge', text: 'Most of what I\'m working toward just uses skills I already possess.', reverse: true, tooltip: 'Low complexity = maintenance mode, not growth. If your goals don\'t challenge you, they won\'t change you.' },
+    { id: 3, module: 'MDI', component: 'MDI-Complexity', subscale: 'Complexity Challenge', text: 'The life I\'m building toward would make me unrecognizable to my current self.', reverse: false, tooltip: 'Deep transformation indicator. Are you becoming fundamentally different or just older?' },
+    
+    { id: 4, module: 'MDI', component: 'MDI-Horizon', subscale: 'Temporal Horizon', text: 'I can clearly describe what I want to have accomplished 10 years from now.', reverse: false, tooltip: 'Long-term vision matters. Can you see beyond next semester, next job, next milestone?' },
+    { id: 5, module: 'MDI', component: 'MDI-Horizon', subscale: 'Temporal Horizon', text: 'Most of my goals are focused on the next year or two.', reverse: true, tooltip: 'Short-termism vs. legacy thinking. Meaningful lives are built in decades, not months.' },
+    { id: 6, module: 'MDI', component: 'MDI-Horizon', subscale: 'Temporal Horizon', text: 'I think about what kind of legacy I want to leave behind.', reverse: false, tooltip: 'Transgenerational thinking. What will outlive you? What traces will you leave?' },
+    
+    { id: 7, module: 'MDI', component: 'MDI-Integration', subscale: 'Integration Coherence', text: 'My future goals build naturally on my past achievements and experiences.', reverse: false, tooltip: 'Coherent narrative: past → present → future. Your life should tell a unified story.' },
+    { id: 8, module: 'MDI', component: 'MDI-Integration', subscale: 'Integration Coherence', text: 'The person I\'m becoming feels disconnected from the person I\'ve been.', reverse: true, tooltip: 'Fracture in identity. Are you building or starting over repeatedly?' },
+    { id: 9, module: 'MDI', component: 'MDI-Integration', subscale: 'Integration Coherence', text: 'I can tell a coherent story connecting where I\'ve been, where I am, and where I\'m going.', reverse: false, tooltip: 'Unified temporal narrative. Can you explain your life as one continuous journey?' },
+    
+    { id: 10, module: 'MDI', component: 'MDI-Authenticity', subscale: 'Authenticity', text: 'I\'m pursuing goals that genuinely excite ME, not goals others expect of me.', reverse: false, tooltip: 'Intrinsic vs. extrinsic motivation. Whose life are you building - yours or someone else\'s?' },
+    { id: 11, module: 'MDI', component: 'MDI-Authenticity', subscale: 'Authenticity', text: 'If I\'m honest, most of my goals are about meeting other people\'s expectations.', reverse: true, tooltip: 'External locus of meaning. Are you living for your parents? For Instagram? For "should"?' },
+    { id: 12, module: 'MDI', component: 'MDI-Authenticity', subscale: 'Authenticity', text: 'When I imagine achieving my goals, I feel genuine excitement rather than just relief.', reverse: false, tooltip: 'Approach motivation (toward joy) vs. avoidance motivation (away from fear/shame).' },
+    
+    { id: 13, module: 'MDI', component: 'MDI-Generativity', subscale: 'Generativity', text: 'My work creates possibilities for others, not just for myself.', reverse: false, tooltip: 'Beyond zero-sum. Are you consuming resources or creating opportunities?' },
+    { id: 14, module: 'MDI', component: 'MDI-Generativity', subscale: 'Generativity', text: 'The main purpose of my goals is to benefit me and those immediately close to me.', reverse: true, tooltip: 'Narrow vs. expansive impact. How big is your circle of care?' },
+    { id: 15, module: 'MDI', component: 'MDI-Generativity', subscale: 'Generativity', text: 'I\'m building something that will continue creating value after I\'m gone.', reverse: false, tooltip: 'Legacy construction. What will live on when you don\'t?' },
+
+    // MODULE 2: RATIONAL CAPACITY SCORE (RCS) - 15 questions
+    { id: 16, module: 'RCS', component: 'RCS-Metacognition', subscale: 'Metacognitive Awareness', text: 'I notice when I\'m thinking clearly versus when I\'m mentally fatigued.', reverse: false, tooltip: 'Can you observe your own cognitive state? Metacognition = thinking about thinking.' },
+    { id: 17, module: 'RCS', component: 'RCS-Metacognition', subscale: 'Metacognitive Awareness', text: 'I rarely pay attention to the quality of my own thinking.', reverse: true, tooltip: 'Without monitoring, you can\'t improve. Like driving without checking the dashboard.' },
+    { id: 18, module: 'RCS', component: 'RCS-Metacognition', subscale: 'Metacognitive Awareness', text: 'I can tell when my emotions are affecting my judgment.', reverse: false, tooltip: 'Emotional awareness. Can you notice "I\'m angry so I\'m seeing this unfairly"?' },
+    
+    { id: 19, module: 'RCS', component: 'RCS-Stamina', subscale: 'Cognitive Stamina', text: 'I can work on complex problems for 2-3 hours without significant mental degradation.', reverse: false, tooltip: 'Sustained active inference. Like running a mental marathon - can you go the distance?' },
+    { id: 20, module: 'RCS', component: 'RCS-Stamina', subscale: 'Cognitive Stamina', text: 'My thinking gets noticeably worse after about 30-45 minutes of focused work.', reverse: true, tooltip: 'Rapid depletion. Your "Sapolsky Limit" - the point where glucose runs low and quality tanks.' },
+    { id: 21, module: 'RCS', component: 'RCS-Stamina', subscale: 'Cognitive Stamina', text: 'I can maintain focus on difficult material even when it\'s challenging or boring.', reverse: false, tooltip: 'Willpower/executive function. Can you do hard things even when you don\'t feel like it?' },
+    
+    { id: 22, module: 'RCS', component: 'RCS-Error', subscale: 'Error Detection', text: 'I catch myself making logical errors before acting on them.', reverse: false, tooltip: 'Real-time quality control. Like spell-check for your thinking.' },
+    { id: 23, module: 'RCS', component: 'RCS-Error', subscale: 'Error Detection', text: 'I often realize I made a reasoning mistake only after the consequences appear.', reverse: true, tooltip: 'Post-hoc vs. real-time detection. Finding out you were wrong after it\'s too late.' },
+    { id: 24, module: 'RCS', component: 'RCS-Error', subscale: 'Error Detection', text: 'Before making important decisions, I actively look for flaws in my own thinking.', reverse: false, tooltip: 'Deliberate error-checking. Do you play devil\'s advocate with yourself?' },
+    
+    { id: 25, module: 'RCS', component: 'RCS-Perspective', subscale: 'Perspective Fluency', text: 'I can articulate the strongest version of views I disagree with.', reverse: false, tooltip: 'Steel-manning ability. Can you make the best case for the other side?' },
+    { id: 26, module: 'RCS', component: 'RCS-Perspective', subscale: 'Perspective Fluency', text: 'I find it difficult to understand why intelligent people would believe things I think are wrong.', reverse: true, tooltip: 'Rigid thinking. If you can\'t imagine smart people disagreeing, you\'re stuck.' },
+    { id: 27, module: 'RCS', component: 'RCS-Perspective', subscale: 'Perspective Fluency', text: 'I regularly challenge my own beliefs by considering opposing evidence.', reverse: false, tooltip: 'Active counterfactual reasoning. Do you seek out what might prove you wrong?' },
+    
+    { id: 28, module: 'RCS', component: 'RCS-Synthesis', subscale: 'Synthesis Power', text: 'I regularly connect ideas from completely different domains (science + art, philosophy + business, etc.).', reverse: false, tooltip: 'Cross-domain pattern recognition. The best insights live at intersections.' },
+    { id: 29, module: 'RCS', component: 'RCS-Synthesis', subscale: 'Synthesis Power', text: 'I tend to think within the boundaries of whatever field I\'m studying.', reverse: true, tooltip: 'Domain-locked thinking. Staying in your lane prevents novel connections.' },
+    { id: 30, module: 'RCS', component: 'RCS-Synthesis', subscale: 'Synthesis Power', text: 'I can hold contradictory ideas in mind and find creative ways to integrate them.', reverse: false, tooltip: 'Dialectical thinking. Can you find truth in apparent paradoxes?' },
+
+    // MODULE 3: ANNEALING FLUENCY (AF) - 15 questions
+    { id: 31, module: 'AF', component: 'AF-Novelty', subscale: 'Novelty Seeking', text: 'I deliberately try new activities where I\'m a complete beginner.', reverse: false, tooltip: 'Voluntary "Thaw" - melting your frozen patterns by trying new things. Uncomfortable but necessary.' },
+    { id: 32, module: 'AF', component: 'AF-Novelty', subscale: 'Novelty Seeking', text: 'I prefer sticking with activities I\'m already good at rather than risking looking incompetent.', reverse: true, tooltip: 'Ego protection → Eternal Freeze. Staying comfortable = staying stuck.' },
+    { id: 33, module: 'AF', component: 'AF-Novelty', subscale: 'Novelty Seeking', text: 'In the past 6 months, I\'ve tried at least 2-3 activities I\'d never done before.', reverse: false, tooltip: 'Behavioral indicator. Talk is cheap - what have you actually tried?' },
+    
+    { id: 34, module: 'AF', component: 'AF-Consolidation', subscale: 'Consolidation Practice', text: 'I have regular practices for reviewing and consolidating what I\'ve learned.', reverse: false, tooltip: 'Deliberate "Freeze" - crystallizing learning into stable knowledge. Exploration without consolidation = nothing sticks.' },
+    { id: 35, module: 'AF', component: 'AF-Consolidation', subscale: 'Consolidation Practice', text: 'I rarely take time to reflect on or organize what I\'ve been learning.', reverse: true, tooltip: 'No crystallization → knowledge doesn\'t become "Ice" (stable memory).' },
+    { id: 36, module: 'AF', component: 'AF-Consolidation', subscale: 'Consolidation Practice', text: 'I keep notes, journals, or some system for capturing and integrating insights.', reverse: false, tooltip: 'External scaffolding. Writing, organizing, reviewing = active memory formation.' },
+    
+    { id: 37, module: 'AF', component: 'AF-Control', subscale: 'Temperature Control', text: 'I know when to explore new options versus when to commit deeply to my current path.', reverse: false, tooltip: 'Context-sensitive switching. Sometimes you need to explore, sometimes exploit. Can you tell which?' },
+    { id: 38, module: 'AF', component: 'AF-Control', subscale: 'Temperature Control', text: 'I tend to either jump constantly between new things OR get stuck doing the same thing forever.', reverse: true, tooltip: 'Dysregulated annealing. Either Eternal Thaw (no stability) or Eternal Freeze (no growth).' },
+    { id: 39, module: 'AF', component: 'AF-Control', subscale: 'Temperature Control', text: 'I can tell when I need to shake things up versus when I need to stay the course.', reverse: false, tooltip: 'Metacognitive awareness of your annealing needs. Are you bored? Overwhelmed? Adjust accordingly.' },
+    
+    { id: 40, module: 'AF', component: 'AF-Pattern', subscale: 'Pattern Recognition', text: 'I recognize when I\'m defending beliefs out of habit rather than reason.', reverse: false, tooltip: 'Detecting local minima. Can you tell when you\'re arguing for your ego instead of truth?' },
+    { id: 41, module: 'AF', component: 'AF-Pattern', subscale: 'Pattern Recognition', text: 'I usually don\'t notice when I\'ve fallen into unproductive routines.', reverse: true, tooltip: 'Blindness to stuck states. Like a fish not noticing water.' },
+    { id: 42, module: 'AF', component: 'AF-Pattern', subscale: 'Pattern Recognition', text: 'When I\'m stuck on a problem, I know it\'s time to try a completely different approach.', reverse: false, tooltip: 'Adaptive strategy switching. Insanity = doing the same thing expecting different results.' },
+    
+    { id: 43, module: 'AF', component: 'AF-Reorganization', subscale: 'Reorganization Capacity', text: 'I\'ve changed my mind on major issues when presented with better evidence.', reverse: false, tooltip: 'Actual mental flexibility (not just claimed). Have you actually updated beliefs that mattered?' },
+    { id: 44, module: 'AF', component: 'AF-Reorganization', subscale: 'Reorganization Capacity', text: 'Once I\'ve invested a lot of time learning something, I find it hard to let it go even if it\'s not working.', reverse: true, tooltip: 'Sunk cost fallacy. Past investment shouldn\'t determine future action.' },
+    { id: 45, module: 'AF', component: 'AF-Reorganization', subscale: 'Reorganization Capacity', text: 'I\'m willing to completely reorganize my thinking when my current models don\'t fit reality.', reverse: false, tooltip: 'Radical updating capacity. Can you burn down your own beliefs when they fail?' },
+
+    // MODULE 4: LIFE QUALITY INTEGRATION (LQI) - 15 questions
+    { id: 46, module: 'LQI', component: 'LQI-Alignment', subscale: 'Energy Alignment', text: 'I spend most of my energy on things I genuinely care about.', reverse: false, tooltip: 'Values-behavior congruence. Does your calendar match your claimed priorities?' },
+    { id: 47, module: 'LQI', component: 'LQI-Alignment', subscale: 'Energy Alignment', text: 'Much of my day is spent on activities that don\'t actually matter to me.', reverse: true, tooltip: 'Thermodynamic waste. Burning 20W on things you don\'t care about = slow death.' },
+    { id: 48, module: 'LQI', component: 'LQI-Alignment', subscale: 'Energy Alignment', text: 'If I tracked my time for a week, it would reflect what I say my priorities are.', reverse: false, tooltip: 'Revealed preferences vs. stated preferences. Actions > words.' },
+    
+    { id: 49, module: 'LQI', component: 'LQI-Joy', subscale: 'Joy Density', text: 'My daily activities bring me regular moments of genuine joy.', reverse: false, tooltip: 'Positive affect frequency. How often do you actually feel good?' },
+    { id: 50, module: 'LQI', component: 'LQI-Joy', subscale: 'Joy Density', text: 'Most days feel like a grind I have to get through rather than experiences I enjoy.', reverse: true, tooltip: 'Hedonic tone. Is life something to endure or enjoy?' },
+    { id: 51, module: 'LQI', component: 'LQI-Joy', subscale: 'Joy Density', text: 'I regularly experience states of "flow" where I lose track of time doing meaningful work.', reverse: false, tooltip: 'Intrinsic reward from CIB production. When work feels like play.' },
+    
+    { id: 52, module: 'LQI', component: 'LQI-Relational', subscale: 'Relational Depth', text: 'My close relationships energize me more than they deplete me.', reverse: false, tooltip: 'Net positive social thermodynamics. Do people fill your tank or drain it?' },
+    { id: 53, module: 'LQI', component: 'LQI-Relational', subscale: 'Relational Depth', text: 'I often feel drained after spending time with people, even people I care about.', reverse: true, tooltip: 'Social depletion > replenishment. Even "good" relationships can be exhausting if not authentic.' },
+    { id: 54, module: 'LQI', component: 'LQI-Relational', subscale: 'Relational Depth', text: 'I have at least 2-3 relationships where I can be completely authentic.', reverse: false, tooltip: 'Depth vs. performative maintenance. Can you be yourself anywhere?' },
+    
+    { id: 55, module: 'LQI', component: 'LQI-Somatic', subscale: 'Somatic Coherence', text: 'I feel at home in my body, not at war with it.', reverse: false, tooltip: 'Bioelectric harmony. Are your mind and body working together or fighting?' },
+    { id: 56, module: 'LQI', component: 'LQI-Somatic', subscale: 'Somatic Coherence', text: 'I often ignore physical signals (hunger, fatigue, tension) until they become severe.', reverse: true, tooltip: 'Dissociation from bodily states. Your body is trying to tell you things - are you listening?' },
+    { id: 57, module: 'LQI', component: 'LQI-Somatic', subscale: 'Somatic Coherence', text: 'I have practices that help me stay connected to my physical well-being (movement, rest, nourishment).', reverse: false, tooltip: 'Intentional embodiment. Not just "working out" but actual body-mind integration.' },
+    
+    { id: 58, module: 'LQI', component: 'LQI-Purpose', subscale: 'Purpose Clarity', text: 'I can state my life purpose clearly in one or two sentences and it feels true.', reverse: false, tooltip: 'Crystallized existential meaning. Can you answer "Why am I here?" without bullshit?' },
+    { id: 59, module: 'LQI', component: 'LQI-Purpose', subscale: 'Purpose Clarity', text: 'I\'m not really sure what the overall point of my life is supposed to be.', reverse: true, tooltip: 'Existential confusion. Living without purpose = thermodynamic drift.' },
+    { id: 60, module: 'LQI', component: 'LQI-Purpose', subscale: 'Purpose Clarity', text: 'When faced with difficult decisions, I have a clear sense of what matters most to guide me.', reverse: false, tooltip: 'Purpose as compass. Values that actually help you navigate hard choices.' },
+
+    // MODULE 5: CIB PRODUCTION RATE (CPR) - 10 questions
+    { id: 61, module: 'CPR', component: 'CPR-Skills', subscale: 'Skill Acquisition', text: 'I\'m actively developing new skills, not just using the ones I already have.', reverse: false, tooltip: 'Active growth vs. maintenance. Are you expanding your repertoire or coasting?' },
+    { id: 62, module: 'CPR', component: 'CPR-Skills', subscale: 'Skill Acquisition', text: 'I haven\'t learned a genuinely new skill in the past year.', reverse: true, tooltip: 'Stagnation indicator. If you\'re not growing, you\'re dying.' },
+    
+    { id: 63, module: 'CPR', component: 'CPR-Integration', subscale: 'Knowledge Integration', text: 'I regularly have insights that connect ideas from different fields I\'m studying.', reverse: false, tooltip: 'Cross-domain synthesis = new CIB structures. The best ideas live at intersections.' },
+    { id: 64, module: 'CPR', component: 'CPR-Integration', subscale: 'Knowledge Integration', text: 'My learning tends to stay within separate, unconnected boxes.', reverse: true, tooltip: 'Compartmentalized thinking. You\'re accumulating facts, not building understanding.' },
+    
+    { id: 65, module: 'CPR', component: 'CPR-Output', subscale: 'Creative Output', text: 'I\'ve created something substantial (project, writing, art, system, organization) in the past 6 months.', reverse: false, tooltip: 'Behavioral evidence of CIB production. What have you actually built?' },
+    { id: 66, module: 'CPR', component: 'CPR-Output', subscale: 'Creative Output', text: 'I mostly consume information rather than create anything with it.', reverse: true, tooltip: 'Input without transformation. You\'re a storage unit, not a factory.' },
+    
+    { id: 67, module: 'CPR', component: 'CPR-Transmission', subscale: 'Transmission', text: 'I teach others what I know, which deepens my own understanding.', reverse: false, tooltip: 'Teaching crystallizes Ice. You don\'t really know something until you can explain it.' },
+    { id: 68, module: 'CPR', component: 'CPR-Transmission', subscale: 'Transmission', text: 'I keep most of what I learn to myself.', reverse: true, tooltip: 'No externalization. Knowledge dies with you if you never share it.' },
+    
+    { id: 69, module: 'CPR', component: 'CPR-Legacy', subscale: 'Legacy Construction', text: 'I\'m building something (knowledge, community, system, work) that will continue creating value after I\'m gone.', reverse: false, tooltip: 'Transgenerational CIB production. What traces will outlive you?' },
+    { id: 70, module: 'CPR', component: 'CPR-Legacy', subscale: 'Legacy Construction', text: 'I don\'t think much about whether my work will have lasting impact.', reverse: true, tooltip: 'Short-term orientation. No thought for legacy = living in the moment only.' }
+];
+
+// ==========================================
+// MODULE METADATA
+// ==========================================
+
+const moduleInfo = {
+    'MDI': {
+        name: 'Meaning Depth Index',
+        description: 'Are your goals worthy of your potential?',
+        color: 'purple',
+        questionCount: 15
+    },
+    'RCS': {
+        name: 'Rational Capacity Score',
+        description: 'Can you sustain high-quality thinking?',
+        color: 'blue',
+        questionCount: 15
+    },
+    'AF': {
+        name: 'Annealing Fluency',
+        description: 'Can you balance exploration and consolidation?',
+        color: 'green',
+        questionCount: 15
+    },
+    'LQI': {
+        name: 'Life Quality Integration',
+        description: 'Is your life actually good?',
+        color: 'orange',
+        questionCount: 15
+    },
+    'CPR': {
+        name: 'CIB Production Rate',
+        description: 'Are you building something that lasts?',
+        color: 'red',
+        questionCount: 10
+    }
+};
+
+// ==========================================
+// STATE MANAGEMENT
+// ==========================================
+
+let currentModule = null;
+let currentQuestionIndex = 0;
+let activeQuestions = [];
+let responses = {};
+let studentData = {};
+let assessmentMode = 'full'; // 'full' or 'module'
+let startTime = Date.now();
+
+// ==========================================
+// ACCESSIBILITY FUNCTIONS
+// ==========================================
+
+function announce(message, priority = 'polite') {
+    const announcer = document.getElementById('sr-announcements');
+    if (announcer) {
+        announcer.setAttribute('aria-live', priority);
+        announcer.textContent = message;
+        setTimeout(() => announcer.textContent = '', 1000);
+    }
+}
+
+let highContrastEnabled = false;
+function toggleHighContrast() {
+    highContrastEnabled = !highContrastEnabled;
+    document.body.style.filter = highContrastEnabled ? 'contrast(1.5)' : '';
+    announce(highContrastEnabled ? 'High contrast enabled' : 'High contrast disabled');
+}
+
+let textSizeLevel = 0;
+function adjustTextSize(direction) {
+    if (direction === 'increase' && textSizeLevel < 2) textSizeLevel++;
+    else if (direction === 'decrease' && textSizeLevel > -2) textSizeLevel--;
+    
+    const newSize = 16 + (textSizeLevel * 2);
+    document.documentElement.style.fontSize = newSize + 'px';
+    announce(`Text size ${direction === 'increase' ? 'increased' : 'decreased'}`);
+}
+
+// ==========================================
+// CONSENT CHECKING
+// ==========================================
+
+function checkConsent() {
+    const consentEd = document.getElementById('consent-educational');
+    const consentData = document.getElementById('consent-data');
+    const status = document.getElementById('consent-status');
+    
+    const bothChecked = consentEd?.checked && consentData?.checked;
+    
+    // Enable/disable all start buttons
+    document.querySelectorAll('button[onclick^="start"]').forEach(btn => {
+        btn.disabled = !bothChecked;
+    });
+    
+    if (bothChecked) {
+        status.textContent = 'Ready to begin.';
+        status.className = 'font-semibold text-green-600';
+    } else {
+        status.textContent = 'Both consent boxes must be checked to begin.';
+        status.className = 'font-semibold text-red-600';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('consent-educational')?.addEventListener('change', checkConsent);
+    document.getElementById('consent-data')?.addEventListener('change', checkConsent);
+    checkConsent();
+});
+
+// ==========================================
+// ASSESSMENT START FUNCTIONS
+// ==========================================
+
+function showModuleSelection() {
+    const moduleDiv = document.getElementById('individual-modules');
+    moduleDiv.classList.toggle('hidden');
+    announce(moduleDiv.classList.contains('hidden') ? 'Module selection hidden' : 'Module selection shown');
+}
+
+function collectStudentData() {
+    return {
+        name: document.getElementById('student-name').value || 'Anonymous',
+        age: document.getElementById('student-age').value || null,
+        consentData: document.getElementById('consent-data').checked,
+        timestamp: new Date().toISOString(),
+        startTime: Date.now()
+    };
+}
+
+function startFullAssessment() {
+    assessmentMode = 'full';
+    studentData = collectStudentData();
+    activeQuestions = [...questions]; // All 70 questions
+    currentQuestionIndex = 0;
+    responses = {};
+    
+    document.getElementById('landing').classList.add('hidden');
+    document.getElementById('assessment').classList.remove('hidden');
+    
+    announce('Full assessment started. Question 1 of 70.');
+    displayQuestion();
+}
+
+function startModule(moduleName) {
+    assessmentMode = 'module';
+    currentModule = moduleName;
+    studentData = collectStudentData();
+    activeQuestions = questions.filter(q => q.module === moduleName);
+    currentQuestionIndex = 0;
+    responses = {};
+    
+    document.getElementById('landing').classList.add('hidden');
+    document.getElementById('assessment').classList.remove('hidden');
+    
+    announce(`${moduleInfo[moduleName].name} started. Question 1 of ${activeQuestions.length}.`);
+    displayQuestion();
+}
+
+// ==========================================
+// QUESTION DISPLAY
+// ==========================================
+
+function displayQuestion() {
+    if (currentQuestionIndex >= activeQuestions.length) {
+        calculateResults();
+        return;
+    }
+    
+    const q = activeQuestions[currentQuestionIndex];
+    const totalQuestions = activeQuestions.length;
+    
+    // Update module name and description
+    if (assessmentMode === 'full') {
+        const moduleName = moduleInfo[q.module].name;
+        document.getElementById('current-module-name').textContent = `${moduleName}`;
+        document.getElementById('module-description').textContent = moduleInfo[q.module].description;
+    } else {
+        document.getElementById('current-module-name').textContent = moduleInfo[currentModule].name;
+        document.getElementById('module-description').textContent = moduleInfo[currentModule].description;
+    }
+    
+    // Update progress
+    const progress = ((currentQuestionIndex) / totalQuestions) * 100;
+    document.getElementById('current-q').textContent = currentQuestionIndex + 1;
+    document.getElementById('total-q').textContent = totalQuestions;
+    document.getElementById('progress-pct').textContent = Math.round(progress);
+    document.getElementById('progress-bar').style.width = progress + '%';
+    
+    // Update component badge
+    const badge = document.getElementById('component-badge');
+    const color = moduleInfo[q.module].color;
+    badge.textContent = q.subscale;
+    badge.className = `px-4 py-2 rounded-full text-sm font-bold component-${q.module.toLowerCase()}`;
+    
+    // Update question text
+    document.getElementById('question-text').textContent = q.text;
+    document.getElementById('subscale-name').textContent = `${q.module} - ${q.subscale}`;
+    
+    // Update tooltip
+    document.getElementById('tooltip-content').textContent = q.tooltip;
+    
+    // Enable/disable back button
+    document.getElementById('back-btn').disabled = currentQuestionIndex === 0;
+    
+    // Reset likert buttons
+    const buttons = document.querySelectorAll('.likert-btn');
+    buttons.forEach(btn => {
+        btn.classList.remove('bg-purple-600', 'text-white', 'border-purple-600');
+        btn.classList.add('border-gray-300', 'text-gray-900');
+        btn.setAttribute('aria-checked', 'false');
+    });
+    
+    // Restore previous answer if exists
+    if (responses[q.id] !== undefined) {
+        const btn = buttons[responses[q.id] - 1];
+        btn.classList.add('bg-purple-600', 'text-white', 'border-purple-600');
+        btn.classList.remove('border-gray-300', 'text-gray-900');
+        btn.setAttribute('aria-checked', 'true');
+    }
+    
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ==========================================
+// ANSWER HANDLING
+// ==========================================
+
+function answer(value) {
+    const q = activeQuestions[currentQuestionIndex];
+    
+    // Update visual state
+    const buttons = document.querySelectorAll('.likert-btn');
+    buttons.forEach((btn, idx) => {
+        btn.classList.remove('bg-purple-600', 'text-white', 'border-purple-600');
+        btn.classList.add('border-gray-300', 'text-gray-900');
+        btn.setAttribute('aria-checked', 'false');
+        
+        if (idx === value - 1) {
+            btn.classList.add('bg-purple-600', 'text-white', 'border-purple-600');
+            btn.classList.remove('border-gray-300', 'text-gray-900');
+            btn.setAttribute('aria-checked', 'true');
+        }
+    });
+    
+    // Store response
+    responses[q.id] = value;
+    
+    announce(`Selected ${value}`);
+    
+    // Auto-advance after delay
+    setTimeout(() => {
+        if (currentQuestionIndex < activeQuestions.length - 1) {
+            currentQuestionIndex++;
+            displayQuestion();
+        } else {
+            announce('Assessment complete. Calculating results.');
+            calculateResults();
+        }
+    }, 800);
+}
+
+function previousQuestion() {
+    if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        displayQuestion();
+        announce(`Returned to question ${currentQuestionIndex + 1}`);
+    }
+}
+
+function saveAndExit() {
+    const resultsData = {
+        studentData,
+        responses,
+        assessmentMode,
+        currentModule,
+        currentQuestionIndex,
+        activeQuestions: activeQuestions.map(q => q.id),
+        savedAt: new Date().toISOString()
+    };
+    
+    localStorage.setItem('mcl-progress', JSON.stringify(resultsData));
+    
+    alert('Progress saved! You can return later to continue.\n\nTo resume, reload this page and your progress will be restored.');
+    
+    announce('Progress saved successfully');
+}
+
+// ==========================================
+// SCORING FUNCTIONS
+// ==========================================
+
+function calculateResults() {
+    const componentScores = {
+        'MDI-Complexity': [],
+        'MDI-Horizon': [],
+        'MDI-Integration': [],
+        'MDI-Authenticity': [],
+        'MDI-Generativity': [],
+        'RCS-Metacognition': [],
+        'RCS-Stamina': [],
+        'RCS-Error': [],
+        'RCS-Perspective': [],
+        'RCS-Synthesis': [],
+        'AF-Novelty': [],
+        'AF-Consolidation': [],
+        'AF-Control': [],
+        'AF-Pattern': [],
+        'AF-Reorganization': [],
+        'LQI-Alignment': [],
+        'LQI-Joy': [],
+        'LQI-Relational': [],
+        'LQI-Somatic': [],
+        'LQI-Purpose': [],
+        'CPR-Skills': [],
+        'CPR-Integration': [],
+        'CPR-Output': [],
+        'CPR-Transmission': [],
+        'CPR-Legacy': []
+    };
+    
+    // Score each question
+    questions.forEach(q => {
+        if (responses[q.id] !== undefined) {
+            let rawScore = responses[q.id];
+            if (q.reverse) {
+                rawScore = 8 - rawScore;
+            }
+            const normalized = ((rawScore - 1) / 6) * 100;
+            componentScores[q.component].push(normalized);
+        }
+    });
+    
+    // Calculate module scores
+    const scores = {
+        MDI: {
+            overall: 0,
+            subscales: {
+                Complexity: average(componentScores['MDI-Complexity']),
+                Horizon: average(componentScores['MDI-Horizon']),
+                Integration: average(componentScores['MDI-Integration']),
+                Authenticity: average(componentScores['MDI-Authenticity']),
+                Generativity: average(componentScores['MDI-Generativity'])
+            }
+        },
+        RCS: {
+            overall: 0,
+            subscales: {
+                Metacognition: average(componentScores['RCS-Metacognition']),
+                Stamina: average(componentScores['RCS-Stamina']),
+                Error: average(componentScores['RCS-Error']),
+                Perspective: average(componentScores['RCS-Perspective']),
+                Synthesis: average(componentScores['RCS-Synthesis'])
+            }
+        },
+        AF: {
+            overall: 0,
+            subscales: {
+                Novelty: average(componentScores['AF-Novelty']),
+                Consolidation: average(componentScores['AF-Consolidation']),
+                Control: average(componentScores['AF-Control']),
+                Pattern: average(componentScores['AF-Pattern']),
+                Reorganization: average(componentScores['AF-Reorganization'])
+            }
+        },
+        LQI: {
+            overall: 0,
+            subscales: {
+                Alignment: average(componentScores['LQI-Alignment']),
+                Joy: average(componentScores['LQI-Joy']),
+                Relational: average(componentScores['LQI-Relational']),
+                Somatic: average(componentScores['LQI-Somatic']),
+                Purpose: average(componentScores['LQI-Purpose'])
+            }
+        },
+        CPR: {
+            overall: 0,
+            subscales: {
+                Skills: average(componentScores['CPR-Skills']),
+                Integration: average(componentScores['CPR-Integration']),
+                Output: average(componentScores['CPR-Output']),
+                Transmission: average(componentScores['CPR-Transmission']),
+                Legacy: average(componentScores['CPR-Legacy'])
+            }
+        }
+    };
+    
+    // Calculate overall module scores
+    scores.MDI.overall = Math.round(average(Object.values(scores.MDI.subscales)));
+    scores.RCS.overall = Math.round(average(Object.values(scores.RCS.subscales)));
+    scores.AF.overall = Math.round(average(Object.values(scores.AF.subscales)));
+    scores.LQI.overall = Math.round(average(Object.values(scores.LQI.subscales)));
+    scores.CPR.overall = Math.round(average(Object.values(scores.CPR.subscales)));
+    
+    // Round subscales
+    Object.keys(scores).forEach(module => {
+        Object.keys(scores[module].subscales).forEach(subscale => {
+            scores[module].subscales[subscale] = Math.round(scores[module].subscales[subscale]);
+        });
+    });
+    
+    // Calculate overall flourishing score
+    const overallScore = Math.round(average([
+        scores.MDI.overall,
+        scores.RCS.overall,
+        scores.AF.overall,
+        scores.LQI.overall,
+        scores.CPR.overall
+    ]));
+    
+    // Identify growth edges and recommendations
+    const recommendations = generateRecommendations(scores);
+    
+    // Package results
+    const resultsData = {
+        studentData,
+        scores,
+        overallScore,
+        recommendations,
+        responses,
+        completedAt: new Date().toISOString(),
+        durationMinutes: Math.round((Date.now() - studentData.startTime) / 60000),
+        assessmentMode
+    };
+    
+    // Save results
+    localStorage.setItem('mcl-results', JSON.stringify(resultsData));
+    
+    // Save to aggregate if consent given
+    if (studentData.consentData) {
+        saveToAggregate(resultsData);
+    }
+    
+    // Display results
+    displayResults(resultsData);
+}
+
+function average(arr) {
+    if (arr.length === 0) return 0;
+    return arr.reduce((a, b) => a + b, 0) / arr.length;
+}
+
+// ==========================================
+// RECOMMENDATION GENERATION
+// ==========================================
+
+function generateRecommendations(scores) {
+    const recommendations = [];
+    
+    const mdi = scores.MDI.overall;
+    const rcs = scores.RCS.overall;
+    const af = scores.AF.overall;
+    const lqi = scores.LQI.overall;
+    const cpr = scores.CPR.overall;
+    
+    // Pattern: High MDI + Low RCS
+    if (mdi >= 70 && rcs < 55) {
+        recommendations.push({
+            priority: 1,
+            protocol: 'Rational Stamina Protocol',
+            reason: `You have meaningful goals (MDI: ${mdi}) but lack tools for sustained complex thought (RCS: ${rcs}).`,
+            focus: 'RCS',
+            duration: '8 weeks',
+            description: 'Build metacognitive awareness, cognitive stamina, and error detection through systematic practice.'
+        });
+    }
+    
+    // Pattern: High RCS + Low MDI
+    if (rcs >= 70 && mdi < 55) {
+        recommendations.push({
+            priority: 1,
+            protocol: 'Depth Upgrade Protocol',
+            reason: `You can think clearly (RCS: ${rcs}) but may not have goals worthy of your potential (MDI: ${mdi}).`,
+            focus: 'MDI',
+            duration: '6 weeks',
+            description: 'Identify morphogenetic targets that require genuine transformation and build toward legacy.'
+        });
+    }
+    
+    // Pattern: High MDI + RCS + Low AF
+    if (mdi >= 70 && rcs >= 70 && af < 55) {
+        recommendations.push({
+            priority: 1,
+            protocol: 'Flexibility Training Protocol',
+            reason: `You're smart and purposeful but may be stuck in rigid patterns (AF: ${af}).`,
+            focus: 'AF',
+            duration: '12 weeks',
+            description: 'Force temperature increase through radical novelty exposure to escape local minima.'
+        });
+    }
+    
+    // Pattern: All high except CPR
+    if (mdi >= 70 && rcs >= 70 && af >= 70 && cpr < 55) {
+        recommendations.push({
+            priority: 1,
+            protocol: 'Legacy Activation Protocol',
+            reason: `You have capacity but aren't building much that will last (CPR: ${cpr}).`,
+            focus: 'CPR',
+            duration: '10 weeks',
+            description: 'Transform knowledge into creative output, teaching, and legacy construction.'
+        });
+    }
+    
+    // Pattern: High CPR + Low LQI
+    if (cpr >= 70 && lqi < 55) {
+        recommendations.push({
+            priority: 1,
+            protocol: 'Sustainable Joy Protocol',
+            reason: `You're productive but life quality is suffering (LQI: ${lqi}).`,
+            focus: 'LQI',
+            duration: '8 weeks',
+            description: 'Realign energy expenditure with values, cultivate joy, and integrate body-mind-purpose.'
+        });
+    }
+    
+    // Pattern: Multiple low scores
+    const lowCount = [mdi, rcs, af, lqi, cpr].filter(s => s < 55).length;
+    if (lowCount >= 3 && recommendations.length === 0) {
+        recommendations.push({
+            priority: 1,
+            protocol: 'Foundations Protocol',
+            reason: 'Multiple dimensions need development. Start with building basic capacities.',
+            focus: 'General',
+            duration: '12 weeks',
+            description: 'Comprehensive capacity building across all dimensions with emphasis on lowest scores.'
+        });
+    }
+    
+    // Identify top growth edge if no major pattern
+    if (recommendations.length === 0) {
+        const modules = [
+            { name: 'MDI', score: mdi, protocol: 'Depth Upgrade Protocol' },
+            { name: 'RCS', score: rcs, protocol: 'Rational Stamina Protocol' },
+            { name: 'AF', score: af, protocol: 'Flexibility Training Protocol' },
+            { name: 'LQI', score: lqi, protocol: 'Sustainable Joy Protocol' },
+            { name: 'CPR', score: cpr, protocol: 'Legacy Activation Protocol' }
+        ];
+        
+        modules.sort((a, b) => a.score - b.score);
+        const lowest = modules[0];
+        
+        recommendations.push({
+            priority: 2,
+            protocol: lowest.protocol,
+            reason: `Your ${lowest.name} score (${lowest.score}) is your primary growth edge.`,
+            focus: lowest.name,
+            duration: '8-12 weeks',
+            description: 'Focus on developing this dimension for balanced flourishing.'
+        });
+    }
+    
+    return recommendations;
+}
+
+// ==========================================
+// RESULTS DISPLAY
+// ==========================================
+
+function displayResults(data) {
+    document.getElementById('assessment').classList.add('hidden');
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.classList.remove('hidden');
+    
+    const { scores, overallScore, recommendations } = data;
+    
+    announce(`Assessment complete. Your overall flourishing score is ${overallScore} out of 100.`);
+    
+    resultsDiv.innerHTML = `
+        <div class="max-w-6xl mx-auto px-4 py-8 space-y-8 mb-12">
+            <!-- Header -->
+            <header class="gradient-flourish text-white rounded-2xl shadow-2xl p-8 text-center">
+                <h1 class="text-4xl font-bold mb-2">Your Meaning Architecture</h1>
+                <p class="text-xl">Thermodynamic Flourishing Profile</p>
+                <p class="text-lg mt-2">Completed: ${new Date().toLocaleDateString()}</p>
+                <p class="text-md mt-1 opacity-90">Duration: ${data.durationMinutes} minutes</p>
+            </header>
+
+            <!-- Overall Score -->
+            <section class="bg-white rounded-2xl shadow-2xl p-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Your Overall Flourishing Score</h2>
+                <div class="flex justify-center items-center mb-6">
+                    <div class="text-center">
+                        <div class="text-8xl font-bold gradient-flourish bg-clip-text text-transparent">
+                            ${overallScore}
+                        </div>
+                        <div class="text-2xl text-gray-600 mt-2">out of 100</div>
+                        <div class="text-lg text-gray-700 mt-3 font-semibold">
+                            ${interpretFlourishingScore(overallScore)}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            ${generateRadarChartSection(scores)}
+            ${generateModuleBreakdown(scores)}
+            ${generateRecommendationsSection(recommendations, scores)}
+            ${generateActionsSection()}
+        </div>
+    `;
+    
+    setTimeout(() => {
+        renderRadarChart(scores);
+    }, 100);
+}
+
+function interpretFlourishingScore(score) {
+    if (score >= 80) return '🌟 Exceptional Flourishing';
+    if (score >= 70) return '✨ Strong Flourishing';
+    if (score >= 60) return '🌱 Developing Well';
+    if (score >= 50) return '🔨 Building Foundations';
+    if (score >= 40) return '🌅 Early Development';
+    return '🌱 Growth Opportunity';
+}
+
+function generateRadarChartSection(scores) {
+    return `
+        <section class="bg-white rounded-2xl shadow-2xl p-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Your Five-Dimensional Profile</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <canvas id="radarChart" width="400" height="400" aria-hidden="true"></canvas>
+                    <div class="sr-only">
+                        Radar chart showing: MDI ${scores.MDI.overall}, RCS ${scores.RCS.overall}, 
+                        AF ${scores.AF.overall}, LQI ${scores.LQI.overall}, CPR ${scores.CPR.overall}
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Score Summary</h3>
+                    
+                    <div class="p-4 border-l-4 border-purple-500 bg-purple-50 rounded-r-lg">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-bold text-purple-900">Meaning Depth</span>
+                            <span class="text-2xl font-bold text-purple-600">${scores.MDI.overall}</span>
+                        </div>
+                        <div class="text-sm text-purple-800">${interpretScore(scores.MDI.overall)}</div>
+                    </div>
+                    
+                    <div class="p-4 border-l-4 border-blue-500 bg-blue-50 rounded-r-lg">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-bold text-blue-900">Rational Capacity</span>
+                            <span class="text-2xl font-bold text-blue-600">${scores.RCS.overall}</span>
+                        </div>
+                        <div class="text-sm text-blue-800">${interpretScore(scores.RCS.overall)}</div>
+                    </div>
+                    
+                    <div class="p-4 border-l-4 border-green-500 bg-green-50 rounded-r-lg">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-bold text-green-900">Annealing Fluency</span>
+                            <span class="text-2xl font-bold text-green-600">${scores.AF.overall}</span>
+                        </div>
+                        <div class="text-sm text-green-800">${interpretScore(scores.AF.overall)}</div>
+                    </div>
+                    
+                    <div class="p-4 border-l-4 border-orange-500 bg-orange-50 rounded-r-lg">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-bold text-orange-900">Life Quality</span>
+                            <span class="text-2xl font-bold text-orange-600">${scores.LQI.overall}</span>
+                        </div>
+                        <div class="text-sm text-orange-800">${interpretScore(scores.LQI.overall)}</div>
+                    </div>
+                    
+                    <div class="p-4 border-l-4 border-red-500 bg-red-50 rounded-r-lg">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-bold text-red-900">CIB Production</span>
+                            <span class="text-2xl font-bold text-red-600">${scores.CPR.overall}</span>
+                        </div>
+                        <div class="text-sm text-red-800">${interpretScore(scores.CPR.overall)}</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    `;
+}
+
+function interpretScore(score) {
+    if (score >= 70) return 'Strong - Flourishing';
+    if (score >= 55) return 'Developing - Functional with room for growth';
+    if (score >= 40) return 'Growth Edge - Primary development opportunity';
+    return 'Opportunity - Significant potential for improvement';
+}
+
+function generateModuleBreakdown(scores) {
+    return `
+        <section class="bg-white rounded-2xl shadow-2xl p-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Detailed Subscale Breakdown</h2>
+            
+            <div class="space-y-6">
+                ${generateModuleCard('MDI', 'Meaning Depth Index', scores.MDI, 'purple')}
+                ${generateModuleCard('RCS', 'Rational Capacity Score', scores.RCS, 'blue')}
+                ${generateModuleCard('AF', 'Annealing Fluency', scores.AF, 'green')}
+                ${generateModuleCard('LQI', 'Life Quality Integration', scores.LQI, 'orange')}
+                ${generateModuleCard('CPR', 'CIB Production Rate', scores.CPR, 'red')}
+            </div>
+        </section>
+    `;
+}
+
+function generateModuleCard(moduleCode, moduleName, moduleData, color) {
+    const subscales = Object.entries(moduleData.subscales)
+        .map(([name, score]) => `
+            <div class="flex justify-between items-center py-2 border-b border-${color}-100 last:border-0">
+                <span class="text-${color}-900">${name}</span>
+                <span class="font-bold text-${color}-700">${score}</span>
+            </div>
+        `).join('');
+    
+    return `
+        <details class="border-2 border-${color}-200 rounded-xl overflow-hidden">
+            <summary class="p-5 bg-${color}-50 cursor-pointer hover:bg-${color}-100">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3 class="text-xl font-bold text-${color}-900">${moduleName}</h3>
+                        <p class="text-sm text-${color}-700">${moduleInfo[moduleCode].description}</p>
+                    </div>
+                    <div class="text-4xl font-bold text-${color}-600">${moduleData.overall}</div>
+                </div>
+            </summary>
+            <div class="p-5 bg-white">
+                <h4 class="font-bold text-gray-900 mb-3">Subscale Scores:</h4>
+                <div class="space-y-1">
+                    ${subscales}
+                </div>
+            </div>
+        </details>
+    `;
+}
+
+function generateRecommendationsSection(recommendations, scores) {
+    if (recommendations.length === 0) {
+        return `
+            <section class="bg-green-50 border-2 border-green-400 rounded-2xl p-8">
+                <h2 class="text-3xl font-bold text-green-900 mb-4">✨ Balanced Profile</h2>
+                <p class="text-lg text-green-800">
+                    Your scores show balanced development across all dimensions. Continue your current practices 
+                    and consider taking on new challenges that push you further.
+                </p>
+            </section>
+        `;
+    }
+    
+    const primary = recommendations[0];
+    
+    return `
+        <section class="bg-gradient-to-br from-blue-50 to-purple-50 border-2 border-purple-300 rounded-2xl p-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">🎯 Your Primary Development Path</h2>
+            
+            <div class="bg-white rounded-xl p-6 border-2 border-purple-200 mb-6">
+                <div class="mb-4">
+                    <h3 class="text-2xl font-bold text-purple-900 mb-2">${primary.protocol}</h3>
+                    <div class="flex gap-4 text-sm text-gray-600">
+                        <span>⏱️ ${primary.duration}</span>
+                        <span>🎯 Focus: ${primary.focus}</span>
+                    </div>
+                </div>
+                
+                <div class="bg-purple-50 border-l-4 border-purple-500 p-4 mb-4">
+                    <p class="text-purple-900 font-semibold mb-2">Why This Protocol:</p>
+                    <p class="text-purple-800">${primary.reason}</p>
+                </div>
+                
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-4">
+                    <p class="text-blue-900 font-semibold mb-2">What You'll Do:</p>
+                    <p class="text-blue-800">${primary.description}</p>
+                </div>
+            </div>
+            
+            ${recommendations.length > 1 ? `
+                <div class="bg-white rounded-xl p-6 border border-gray-200">
+                    <h4 class="font-bold text-gray-900 mb-3">Additional Growth Opportunities:</h4>
+                    <div class="space-y-3">
+                        ${recommendations.slice(1).map(rec => `
+                            <div class="p-3 bg-gray-50 rounded-lg">
+                                <div class="font-semibold text-gray-900">${rec.protocol}</div>
+                                <div class="text-sm text-gray-600">${rec.reason}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            ` : ''}
+            
+            <div class="mt-6 bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                <p class="text-sm text-yellow-900">
+                    <strong>Note:</strong> Detailed protocol instructions, practice exercises, and weekly schedules 
+                    will be provided in class materials. These are research-validated approaches for building 
+                    thermodynamic flourishing.
+                </p>
+            </div>
+        </section>
+    `;
+}
+
+function generateActionsSection() {
+    return `
+        <section class="bg-white rounded-2xl shadow-2xl p-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Next Steps</h2>
+            
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <button onclick="window.print()" class="flex flex-col items-center gap-3 px-6 py-6 gradient-flourish text-white rounded-xl hover:opacity-90 font-semibold text-lg">
+                    <span class="text-4xl" aria-hidden="true">🖨️</span>
+                    <span>Print Results</span>
+                </button>
+                
+                <button onclick="downloadJSON()" class="flex flex-col items-center gap-3 px-6 py-6 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 font-semibold text-lg">
+                    <span class="text-4xl" aria-hidden="true">💾</span>
+                    <span>Download Data</span>
+                </button>
+                
+                <button onclick="location.reload()" class="flex flex-col items-center gap-3 px-6 py-6 border-2 border-gray-400 text-gray-700 rounded-xl hover:bg-gray-100 font-semibold text-lg">
+                    <span class="text-4xl" aria-hidden="true">🔄</span>
+                    <span>New Assessment</span>
+                </button>
+            </div>
+            
+            <div class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl p-6 border-2 border-purple-200">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Recommended Action Plan</h3>
+                <ol class="space-y-4">
+                    <li class="flex gap-4">
+                        <span class="flex-shrink-0 w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold">1</span>
+                        <div>
+                            <strong class="text-gray-900">Review your full results</strong>
+                            <p class="text-sm text-gray-700">Take time to understand your profile and growth edges</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="flex-shrink-0 w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold">2</span>
+                        <div>
+                            <strong class="text-gray-900">Bring to class discussion</strong>
+                            <p class="text-sm text-gray-700">Share insights and compare patterns (anonymously if preferred)</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="flex-shrink-0 w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold">3</span>
+                        <div>
+                            <strong class="text-gray-900">Choose one protocol to implement</strong>
+                            <p class="text-sm text-gray-700">Start with your primary recommendation</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="flex-shrink-0 w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold">4</span>
+                        <div>
+                            <strong class="text-gray-900">Retake in 8-12 weeks</strong>
+                            <p class="text-sm text-gray-700">Measure your growth and adjust approach</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+        
+        <footer class="bg-gray-100 border-2 border-gray-300 rounded-xl p-6 text-sm text-gray-700">
+            <p class="font-bold text-gray-900 mb-2">The Meaning Construction Lab</p>
+            <p>Based on CIB Thermodynamics framework (Bob Kendrick, 2025)</p>
+            <p class="text-xs text-gray-600 mt-4">Educational tool - not clinical diagnosis | WCAG 2.1 AAA Compliant</p>
+        </footer>
+    `;
+}
+
+// ==========================================
+// CHART RENDERING
+// ==========================================
+
+function renderRadarChart(scores) {
+    const ctx = document.getElementById('radarChart');
+    if (!ctx) return;
+    
+    new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: ['Meaning Depth', 'Rational Capacity', 'Annealing Fluency', 'Life Quality', 'CIB Production'],
+            datasets: [{
+                label: 'Your Profile',
+                data: [scores.MDI.overall, scores.RCS.overall, scores.AF.overall, scores.LQI.overall, scores.CPR.overall],
+                fill: true,
+                backgroundColor: 'rgba(139, 92, 246, 0.2)',
+                borderColor: 'rgb(139, 92, 246)',
+                pointBackgroundColor: 'rgb(139, 92, 246)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgb(139, 92, 246)',
+                pointRadius: 6,
+                pointHoverRadius: 8
+            }]
+        },
+        options: {
+            elements: {
+                line: {
+                    borderWidth: 3
+                }
+            },
+            scales: {
+                r: {
+                    angleLines: {
+                        display: true,
+                        color: 'rgba(0, 0, 0, 0.1)'
+                    },
+                    suggestedMin: 0,
+                    suggestedMax: 100,
+                    ticks: {
+                        stepSize: 20,
+                        backdropColor: 'transparent'
+                    },
+                    grid: {
+                        color: 'rgba(0, 0, 0, 0.1)'
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        }
+    });
+}
+
+// ==========================================
+// UTILITY FUNCTIONS
+// ==========================================
+
+function downloadJSON() {
+    const data = localStorage.getItem('mcl-results');
+    if (!data) {
+        alert('No results found. Please complete the assessment first.');
+        return;
+    }
+    
+    try {
+        const parsed = JSON.parse(data);
+        const filename = `meaning-construction-${parsed.studentData.name.replace(/[^a-z0-9]/gi, '_')}-${new Date().toISOString().split('T')[0]}.json`;
+        
+        const blob = new Blob([data], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        
+        announce('Results downloaded successfully');
+    } catch (error) {
+        alert('Error downloading results. Please try again.');
+        console.error('Download error:', error);
+    }
+}
+
+function saveToAggregate(data) {
+    try {
+        let aggregate = JSON.parse(localStorage.getItem('mcl-aggregate') || '[]');
+        
+        aggregate.push({
+            timestamp: data.completedAt,
+            age: data.studentData.age,
+            scores: {
+                MDI: data.scores.MDI.overall,
+                RCS: data.scores.RCS.overall,
+                AF: data.scores.AF.overall,
+                LQI: data.scores.LQI.overall,
+                CPR: data.scores.CPR.overall,
+                overall: data.overallScore
+            },
+            topRecommendation: data.recommendations[0]?.protocol || null
+        });
+        
+        localStorage.setItem('mcl-aggregate', JSON.stringify(aggregate));
+    } catch (error) {
+        console.error('Error saving to aggregate:', error);
+    }
+}
+
+// Load saved progress on page load
+document.addEventListener('DOMContentLoaded', () => {
+    const savedProgress = localStorage.getItem('mcl-progress');
+    if (savedProgress) {
+        try {
+            const data = JSON.parse(savedProgress);
+            const restore = confirm('You have saved progress. Would you like to continue where you left off?');
+            if (restore) {
+                // Restore state
+                studentData = data.studentData;
+                responses = data.responses;
+                assessmentMode = data.assessmentMode;
+                currentModule = data.currentModule;
+                currentQuestionIndex = data.currentQuestionIndex;
+                activeQuestions = questions.filter(q => data.activeQuestions.includes(q.id));
+                
+                // Show assessment screen
+                document.getElementById('landing').classList.add('hidden');
+                document.getElementById('assessment').classList.remove('hidden');
+                displayQuestion();
+                
+                announce('Progress restored successfully');
+            } else {
+                localStorage.removeItem('mcl-progress');
+            }
+        } catch (error) {
+            console.error('Error restoring progress:', error);
+            localStorage.removeItem('mcl-progress');
+        }
+    }
+});
+</script>
+
+</body>
+</html>
